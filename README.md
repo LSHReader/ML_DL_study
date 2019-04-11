@@ -1,4 +1,4 @@
-# Studying Concept
+# Studying ML/DL  
 
 ### AUC(AUROC), AUPR
 ##### 1. [AUC 설명](https://tykimos.github.io/2017/05/22/Evaluation_Talk/)  
