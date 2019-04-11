@@ -23,4 +23,4 @@ clean한 데이터셋(outlier가 없는)에 새로운 데이터가 들어왔을 
 ##### 2. Anomaly Detection (Outlier Detection)  
 outlier가 포함된 데이터셋에서 진행.  
 대다수의 같은 분포를 형성하고 있는 데이터셋에서 동떨어져 있는 데이터를 outlier로 취급.  
-[scikit-learn]The training data contains outliers which are defined as observations that are far from the others. Outlier detection estimators thus try to fit the regions where the training data is the most concentrated, ignoring the deviant observations.  
+[scikit-learn](https://scikit-learn.org/stable/modules/outlier_detection.html)The training data contains outliers which are defined as observations that are far from the others. Outlier detection estimators thus try to fit the regions where the training data is the most concentrated, ignoring the deviant observations.  
