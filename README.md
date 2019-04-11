@@ -18,10 +18,14 @@ Recall(sensitivity) = 실제 정상인 것들 중에 정상이라고 답한 것�
 AUPR이 1에 가까운 것이 좋다.  
 
 ### Anomaly Detection, Novelty Detection  
-##### 1. Novelty Detection  
+##### 1. Anomaly Detection  
+anomaly detection = detecting abnormal or unusual observations  
+outlier detection = unsupervised anomaly detection  -> outliers/anomalies 가 저밀도 지역에 존재한다고 가정하므로, dense cluster를 형성할 수 없다.  
+novelty detection = semi-supervised anomaly detection  -> 정상 데이터로 간주되는 training data의 저밀도 지역 내에서, novelties/anomalies는 dense cluster을 형성할 수 있다.  
+##### 2. Novelty Detection  
 clean한 데이터셋(outlier가 없는)에 새로운 데이터가 들어왔을 때, 기존 clean data set이 형성하는 분포 내에 들어오면 이상치가 아니고, 분포 밖에 들어오면 이상치라고 취급한다.  
 [scikit-learn](https://scikit-learn.org/stable/modules/outlier_detection.html): The training data is not polluted by outliers and we are interested in detecting whether a __new__ observation is an outlier. In this context an outlier is also called a novelty.
-##### 2. Anomaly Detection (Outlier Detection)  
+##### 3. Outlier Detection
 outlier가 포함된 데이터셋에서 진행.  
 대다수의 같은 분포를 형성하고 있는 데이터셋에서 동떨어져 있는 데이터를 outlier로 취급.  
-[scikit-learn](https://scikit-learn.org/stable/modules/outlier_detection.html): The training data contains outliers which are defined as observations that are far from the others. Outlier detection estimators thus try to fit the regions where the training data is the most concentrated, ignoring the deviant observations.  
+[scikit-learn](https://scikit-learn.org/stable/modules/outlier_detection.html): The training data contains outliers which are defined as observations that are far from the others. Outlier detection estimators thus try to fit the regions where the training data is the most concentrated, ignoring the deviant observations.   
