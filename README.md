@@ -1,7 +1,7 @@
 # Studying Concept
 
 ### AUC(AUROC), AUPR
-##### 1.[AUC 설명](https://tykimos.github.io/2017/05/22/Evaluation_Talk/)  
+##### 1. [AUC 설명](https://tykimos.github.io/2017/05/22/Evaluation_Talk/)  
 AUC = Area under the curve
 sensitivity(recall) = 실제 정상값들 중 정상으로 분류한 비율  
 specificity = 실제 비정상값들 중 비정상으로 분류한 비율  
@@ -17,4 +17,10 @@ Recall(sensitivity) = 실제 정상인 것들 중에 정상이라고 답한 것�
 클래스를 구분하는 임계값(threshold)에 따라 precision/recall 값이 달라진다.(이 값 자체가 커야 좋은지? 에 대한 이유는 잘 모르겠음, 더 생각해보기)  
 AUPR이 1에 가까운 것이 좋다.  
 
-### Anomaly Detection, Novelty Detection
+### Anomaly Detection, Novelty Detection  
+##### 1. Novelty Detection  
+clean한 데이터셋(outlier가 없는)에 새로운 데이터가 들어왔을 때, 기존 clean data set이 형성하는 분포 내에 들어오면 이상치가 아니고, 분포 밖에 들어오면 이상치라고 취급한다.  
+##### 2. Anomaly Detection (Outlier Detection)  
+outlier가 포함된 데이터셋에서 진행.  
+대다수의 같은 분포를 형성하고 있는 데이터셋에서 동떨어져 있는 데이터를 outlier로 취급.  
+[scikit-learn]The training data contains outliers which are defined as observations that are far from the others. Outlier detection estimators thus try to fit the regions where the training data is the most concentrated, ignoring the deviant observations.  
