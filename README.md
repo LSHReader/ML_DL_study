@@ -18,7 +18,7 @@ Recall(sensitivity) = 실제 정상인 것들 중에 정상이라고 답한 것�
 AUPR이 1에 가까운 것이 좋다.  
 
 ### Anomaly Detection, Novelty Detection  
-##### 1. Anomaly Detection  
+##### 1. Anomaly Detection  == outlier detection 인지..?(공부 더 필요)  
 anomaly detection = detecting abnormal or unusual observations  
 outlier detection = unsupervised anomaly detection  -> outliers/anomalies 가 저밀도 지역에 존재한다고 가정하므로, dense cluster를 형성할 수 없다.  
 novelty detection = semi-supervised anomaly detection  -> 정상 데이터로 간주되는 training data의 저밀도 지역 내에서, novelties/anomalies는 dense cluster을 형성할 수 있다.  
