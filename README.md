@@ -29,3 +29,11 @@ clean한 데이터셋(outlier가 없는)에 새로운 데이터가 들어왔을 
 outlier가 포함된 데이터셋에서 진행.  
 대다수의 같은 분포를 형성하고 있는 데이터셋에서 동떨어져 있는 데이터를 outlier로 취급.  
 [scikit-learn](https://scikit-learn.org/stable/modules/outlier_detection.html): The training data contains outliers which are defined as observations that are far from the others. Outlier detection estimators thus try to fit the regions where the training data is the most concentrated, ignoring the deviant observations.   
+
+
+### Early Stopping
+딥러닝에서 네트워크를 훈련시킬 때, 모든 epoch에 대해서 끝까지 돌리는 것이 아니라 중간에 early stopping 해 주어야 한다.  
+이유: overfitting을 방지하기 위해서  
+어떻게: 1 epoch 진행할 때마다, validation data로 model loss를 구해준다. 만약 이전 validation data로 구한 loss 중에 최저인 것(val_min_loss 라고 하겠다) 보다 현재 validation loss가 작으면 학습을 진행한다. 그러나 만약 현재 loss가 더 크다면 그것은 overfitting이 발생하고 있다는 징후이므로 학습을 중지시키고, validation loss가 가장 작을 때의 model을 이용하여 여러 task(reconstruction output 보기, test 데이터 넣어서 여러 활동 수행하기 등등)를 수행한다.  
+
+
