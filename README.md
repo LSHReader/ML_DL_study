@@ -34,7 +34,11 @@ outlier가 포함된 데이터셋에서 진행.
 ### Early Stopping  
 딥러닝에서 네트워크를 훈련시킬 때, 모든 epoch에 대해서 끝까지 돌리는 것이 아니라 중간에 early stopping 해 주어야 한다.  
 이유: overfitting을 방지하기 위해서  
-어떻게: 1 epoch 진행할 때마다, validation data로 model loss를 구해준다. 만약 이전 validation data로 구한 loss 중에 최저인 것(val_min_loss 라고 하겠다) 보다 현재 validation loss가 작으면 학습을 진행한다. 그러나 만약 현재 loss가 더 크다면 그것은 overfitting이 발생하고 있다는 징후이므로 학습을 중지시키고, validation loss가 가장 작을 때의 model을 이용하여 여러 task(reconstruction output 보기, test 데이터 넣어서 여러 활동 수행하기 등등)를 수행한다.  
+어떻게: 1 epoch 진행할 때마다, validation data로 model loss를 구해준다. 지정해 준 num_epochs만큼 학습을 모두 진행시킨다. 만약 이전 validation data로 구한 loss 중에 최저인 것(val_min_loss 라고 하겠다) 보다 현재 validation loss가 작으면 best_model 객체에 model 객체를 저장한다.   
+
+best_model은 모든 epoch 의 학습 동안에, 가장 validation loss가 작은 것이다.   
+
+학습이 모두 끝났을 때, best_model을 torch.save한다.   
 
 ### Pytorch  
 Variable()를 이용할 필요 없음.  
