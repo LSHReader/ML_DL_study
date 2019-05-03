@@ -22,6 +22,7 @@ AUPR이 1에 가까운 것이 좋다.
 anomaly detection = detecting abnormal or unusual observations  
 outlier detection = unsupervised anomaly detection  -> outliers/anomalies 가 저밀도 지역에 존재한다고 가정하므로, dense cluster를 형성할 수 없다.  
 novelty detection = semi-supervised anomaly detection  -> 정상 데이터로 간주되는 training data의 저밀도 지역 내에서, novelties/anomalies는 dense cluster을 형성할 수 있다.  
+
 ##### 2. Novelty Detection  
 clean한 데이터셋(outlier가 없는)에 새로운 데이터가 들어왔을 때, 기존 clean data set이 형성하는 분포 내에 들어오면 이상치가 아니고, 분포 밖에 들어오면 이상치라고 취급한다.  
 [scikit-learn](https://scikit-learn.org/stable/modules/outlier_detection.html): The training data is not polluted by outliers and we are interested in detecting whether a __new__ observation is an outlier. In this context an outlier is also called a novelty.
@@ -42,6 +43,25 @@ best_model은 모든 epoch 의 학습 동안에, 가장 validation loss가 작�
 
 ### Pytorch  
 Variable()를 이용할 필요 없음.  
-optimizer로 Adam 이용할 때, learning_rate 나 weight_decay 설정해 줄 필요 없음.  
+optimizer로 Adam 이용할 때, learning_rate 나 weight_decay 설정해 줄 필요 없음.    
+
+
+
+### Novelty Detection  
+
+다수 범주 데이터(multi-label) 만 가지고 접근. 이상치가 아닌 데이터들의 영역을 칠해준다. binary classification은 imbalance data에 대해 정상 or 이상을 잘 분류해 주지 못하는 것에 비해, novelty detection은 이런 극단적인? imbalance data에 대해 이상 탐지를 할 수 있다. (이상치를 분류해 줄 수 있다.)   
+
+정상 데이터에 대한 영역을 어떻게 칠해주어야 할 지에 대한 고민이 있다. (generalization vs. specialization)   
+
+
+
+
+
+
+
+
+
+
+
 
 
